@@ -17,7 +17,7 @@ python offboarding\invoke_offboarding.py --user-principal-name user@lanternstudi
 .\offboarding\offboarding-exchange-actions.ps1 -UserPrincipalName user@lanternstudios.com -LastDay 2026-10-22 -WhatIf
 ```
 
-Both authenticate with a **managed identity**, so they only work end-to-end inside Azure. Always validate with `--what-if` / `-WhatIf`; never run against a real user unless asked. The Freshservice key comes from `FRESHSERVICE_API_KEY` (Python) or the encrypted Automation variable `FreshserviceApiKey` (PowerShell).
+Both authenticate with a **managed identity**, so they only work end-to-end inside Azure. Always run with `--what-if` / `-WhatIf` first and show the output. Only perform a non-dry-run execution when the user explicitly confirms the live run for the specific UPN after reviewing the what-if output; never infer permission from a general request to "run it". The Freshservice key comes from `FRESHSERVICE_API_KEY` (Python) or the encrypted Automation variable `FreshserviceApiKey` (PowerShell).
 
 ## Architecture
 
